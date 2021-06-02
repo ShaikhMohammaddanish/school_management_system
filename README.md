@@ -9,7 +9,7 @@ Django app contains a custom AbstractBaseUser use email for login.
 
 python3 -m venv env
 source env/bin/activate
-cd src
+cd school_management_system
 
 pip install -r req.txt
 python manage.py makemigrations
