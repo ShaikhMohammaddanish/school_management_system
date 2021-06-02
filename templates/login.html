@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- Google material icons   -->
+<link
+  href="https://fonts.googleapis.com/icon?family=Material+Icons"
+  rel="stylesheet"
+/>
+
+<!-- Google Fonts -->
+<link
+  href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&display=swap"
+  rel="stylesheet"
+/>
+
+<div class="container">
+	<div class="d-flex justify-content-center h-100 mt-5 ">
+		<div class="card">
+			<div class="card-header">
+				<h3>Sign In</h3>
+
+{%if message%}
+<div class="alert alert-danger" role="alert">
+    {{message}}
+  </div>
+{%endif%}
+
+				<div class="d-flex justify-content-end social_icon">
+					<span><i class="fab fa-facebook-square"></i></span>
+					<span><i class="fab fa-google-plus-square"></i></span>
+					<span><i class="fab fa-twitter-square"></i></span>
+				</div>
+			</div>
+			<div class="card-body">
+				<form action="/login" method="POST">
+                    {% csrf_token %}
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-user"></i></span>
+						</div>
+						<input type="text" name='email' class="form-control" placeholder="Email">
+						
+					</div>
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-key"></i></span>
+						</div>
+						<input type="password" name='password' class="form-control" placeholder="password">
+					</div>
+				
+					<div class="form-group">
+						<input type="submit" value="Login" class="btn float-center btn-primary">
+					</div>
+				</form>
+			</div>
+			<div class="card-footer">
+				<div class="d-flex justify-content-center links">
+					Don't have an account?<a href="{% url 'register' %}">Sign Up</a>
+				</div>
+			
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+{% endblock content %}
