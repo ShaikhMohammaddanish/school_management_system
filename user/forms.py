@@ -6,7 +6,7 @@ from . models import userProfile
 class UserRegisterForm(UserCreationForm):
     class Meta:
         model = userProfile
-        fields = ['email'] #'user_name', 'user_type', 'Contact_no', 'Gender', 'Address', 'City', 'State' ,'Country','image'
+        fields = ['email', 'user_type'] #'user_name', 'user_type', 'Contact_no', 'Gender', 'Address', 'City', 'State' ,'Country','image'
 
 
 
